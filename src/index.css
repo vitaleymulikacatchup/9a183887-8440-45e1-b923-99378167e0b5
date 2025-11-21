@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
+  }
+  
+  .btn-primary {
+    @apply bg-brand-green hover:bg-brand-green-dark text-white;
+  }
+  
+  .btn-secondary {
+    @apply bg-white hover:bg-gray-50 text-gray-900 border border-gray-200;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg border border-gray-200 p-6 shadow-sm;
+  }
+  
+  .service-card {
+    @apply bg-white rounded-lg border border-gray-200 p-8 text-center shadow-sm hover:shadow-md transition-shadow;
+  }
+  
+  .pricing-card {
+    @apply bg-white rounded-lg border border-gray-200 p-6 shadow-sm hover:shadow-md transition-shadow;
+  }
+  
+  .discount-card {
+    @apply bg-white rounded-lg border border-gray-200 p-6 text-center shadow-sm;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  --border: 214.3 31.8% 91.4%;
+  --ring: 222.2 84% 4.9%;
+}
+
+.bg-background {
+  background-color: hsl(var(--background));
+}
+
+.text-foreground {
+  color: hsl(var(--foreground));
+}
+
+.border-border {
+  border-color: hsl(var(--border));
+}
+
+.ring-ring {
+  --tw-ring-color: hsl(var(--ring));
+}
